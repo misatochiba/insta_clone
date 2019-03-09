@@ -71,3 +71,17 @@ p {
 .navbar-inverse{
   background-color: #fff;
 }
+
+.textarea{
+    float:left;
+}
+
+input,
+button,
+select,
+textarea {
+  float:left;
+  text-align: center;
+  margin-left: 30%;
+  margin-top: 11px;
+}
