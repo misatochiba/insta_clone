@@ -104,7 +104,7 @@ input,
 button,
 select,
 textarea {
-  float:left;
+  float:right;
   text-align: center;
   margin-left: 30%;
   margin-top: 11px;
@@ -164,11 +164,33 @@ aside {
   }
 }
 
-.gravatar {
+.serch {
   float: left;
   margin-right: 10px;
 }
 
 .gravatar_edit {
   margin-top: 15px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.col-md-6{
+  float:right;
+}
+
+/* signin box  */
+
+label{
+  margin-left: 405px;
 }
