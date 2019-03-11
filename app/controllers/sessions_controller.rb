@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    render layout: false #application.html.erbを適用したくない
   end
 
   def create

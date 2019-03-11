@@ -1,6 +1,8 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Instagram",home_path,id: "logo" %>
+    <% if logged_in? %>
+    <%= link_to "Instagram",user_path(@user),id: "logo" %>
+    <% end %>
     <div>
       <input class=serch placeholder="検索">
     </div>
@@ -8,7 +10,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "serch",help_path%></li>
         <li><%= link_to "notification",contact_path %></li>
-        <li><%= link_to "my page",about_path %></li>
+        <li><%= link_to "Profile", current_user %></li>
         
       </ul>
     </nav>
