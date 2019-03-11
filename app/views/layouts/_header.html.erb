@@ -2,6 +2,7 @@
   <div class="container">
     <% if logged_in? %>
     <%= link_to "Instagram",user_path(@user),id: "logo" %>
+    <%= link_to "Log out", logout_path, method: :delete %>
     <% end %>
     <div>
       <input class=serch placeholder="検索">
