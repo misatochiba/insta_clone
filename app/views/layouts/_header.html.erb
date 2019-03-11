@@ -10,8 +10,9 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "serch",help_path%></li>
         <li><%= link_to "notification",contact_path %></li>
-        <li><%= link_to "Profile", current_user %></li>
-        
+        <% if logged_in? %>
+        <li><%= link_to "Profile", edit_user_path(@user) %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
