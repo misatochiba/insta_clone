@@ -1,8 +1,7 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <% if logged_in? %>
-    <%= link_to "Instagram",user_path(@user),id: "logo" %>
-    <%= link_to "Log out", logout_path, method: :delete %>
+    <%= link_to "Instagram",user_path(current_user),id: "logo" %>
     <% end %>
     <div>
       <input class=serch placeholder="検索">
@@ -12,7 +11,7 @@
         <li><%= link_to "serch",help_path%></li>
         <li><%= link_to "notification",contact_path %></li>
         <% if logged_in? %>
-        <li><%= link_to "Profile", edit_user_path(@user) %></li>
+        <li><%= link_to "Profile", edit_user_path(current_user) %></li>
         <% end %>
       </ul>
     </nav>
