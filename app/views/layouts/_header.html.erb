@@ -2,7 +2,6 @@
   <div class="container">
     <% if logged_in? %>
     <%= link_to "Instagram",user_path(current_user),id: "logo" %>
-    <% end %>
     <div>
       <input class=serch placeholder="検索">
     </div>
@@ -10,10 +9,9 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "serch",help_path%></li>
         <li><%= link_to "notification",contact_path %></li>
-        <% if logged_in? %>
-        <li><%= link_to "Profile", edit_user_path(current_user) %></li>
-        <% end %>
+        <li><%= link_to "Profile",about_path%></li>
       </ul>
     </nav>
+    <% end %>
   </div>
 </header>
