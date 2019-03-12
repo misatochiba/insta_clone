@@ -185,6 +185,13 @@ input {
   height: auto !important;
 }
 
+input,button,select,textarea {
+  float: right;
+  text-align: left;
+  margin-left: 30%;
+  margin-top: 11px;
+}
+
 .col-md-6{
   float:right;
 }
@@ -206,8 +213,8 @@ input {
 
 /* signin box  */
 
-label{
-  margin-left: 405px;
+.label-right{
+  margin-left: 72%;
 }
 
 .form-control {

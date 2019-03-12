@@ -1,23 +1,23 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <label>[Signin]</label>
+    <p class='label-right'>Log in</p>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
-      <%= f.label :name %>
+      <%= f.label :name , class: 'label-right'%>
       <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email %>
+      <%= f.label :email , class: 'label-right'%>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
+      <%= f.label :password , class: 'label-right'%>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%= f.label :password_confirmation, "Confirmation" , class: 'label-right'%>
+      <%= f.password_field :password_confirmation, class: 'form-control' , class: 'label-right'%>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.submit "Create my account", class: "btn btn-primary" , class: 'label-right'%>
     <% end %>
-    <p>アカウントをお持ちですか？ <%= link_to "ログインする", login_path %></p>
+    <p , class='label-right'>アカウントをお持ちですか？<%= link_to "ログインする", login_path %></p>
   </div>
 </div>
