@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
   def show
+    if (@user= cookies.signed[:user_id])#ログイン済みならログイン後のページを表示
     @user = User.find(params[:id])
-    
+    end
   end
 
   def new
