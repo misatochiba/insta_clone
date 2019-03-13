@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    if (user_id = cookies.signed[:user_id])#ログイン済みならログイン後のページを表示
+    if (@user= cookies.signed[:user_id])#ログイン済みならログイン後のページを表示
       redirect_to user_url(current_user),layout: false #application.html.erbを適用したくない
     elsif#ログインページを表示
       render layout: false #application.html.erbを適用したくない
