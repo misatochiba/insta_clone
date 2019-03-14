@@ -26,7 +26,11 @@
           <p , class='label-right'>アカウントをお持ちでないですか？<%= link_to "登録する", new_user_path %></p>
         </div>
       </div>
-    <%= render 'layouts/footer' %>
+      <footer class="footer">
+        <small>
+          <a>© 2019 INSTAGRAM CLONE BY M.CHIBA</a>
+        </small>
+      </footer>
     <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
