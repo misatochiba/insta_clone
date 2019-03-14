@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render root_url and return unless FILL_IN
   end
 
   def new
@@ -21,6 +20,7 @@ class UsersController < ApplicationController
       flash[:info] = "アカウント認証メールを送信しました。メールからログインしてください"
       redirect_to root_url  
     else
+      flash[:info] = "アカウント認証メールを送信しました。メールからログインしてください"
       render 'new'
     end
   end

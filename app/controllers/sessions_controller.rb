@@ -16,8 +16,8 @@ class SessionsController < ApplicationController
         remember user
         redirect_to user_url(current_user)
       else
-        message  = "アカウントが有効ではありません"
-        message += "メールのリンクからログインしてください"
+        flash.now[:danger]  = "アカウントが有効ではありません"
+        flash.now[:danger] += "メールのリンクからログインしてください"
         render  'new',layout: false #application.html.erbを適用したくない
       end
     else
