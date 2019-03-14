@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     #if (@user= cookies.signed[:user_id] && [:id] != nil)#ログイン済みならログイン後のページを表示
-      #redirect_to user_url(current_user),layout: false #application.html.erbを適用したくない
+      #redirect_to user_url(current_user)
     #elsif#ログインページを表示
       render layout: false #application.html.erbを適用したくない
     #end
@@ -14,16 +14,15 @@ class SessionsController < ApplicationController
       if user.activated?
         log_in user
         remember user
-        redirect_to user
+        redirect_to user_url(current_user)
       else
         message  = "アカウントが有効ではありません"
         message += "メールのリンクからログインしてください"
-        flash[:warning] = message
-        redirect_to root_url
+        render  'new',layout: false #application.html.erbを適用したくない
       end
     else
       flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
+      render 'new',layout: false #application.html.erbを適用したくない
     end
   end
 

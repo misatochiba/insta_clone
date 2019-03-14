@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
+  def index
+    @users = User.where(activated: FILL_IN).paginate(page: params[:page])
+  end
+
   def show
-    if (@user= cookies.signed[:user_id])#ログイン済みならログイン後のページを表示
     @user = User.find(params[:id])
-    end
+    render root_url and return unless FILL_IN
   end
 
   def new
@@ -16,7 +19,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.account_activation(@user).deliver_now
       flash[:info] = "アカウント認証メールを送信しました。メールからログインしてください"
-      redirect_to root_url  #createActionに変更したい
+      redirect_to root_url  
     else
       render 'new'
     end
