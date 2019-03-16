@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'sessions#new'
   get 'password_resets/new'
   get 'password_resets/edit'
+  get 'password_resets/create'
   get  '/users/new',    to: 'users#new'
   get  '/home',    to: 'static_pages#home'
   get  '/help',    to: 'static_pages#help'
