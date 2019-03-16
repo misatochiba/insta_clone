@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    render layout: false #application.html.erbを適用したくない
   end
   
   def create
