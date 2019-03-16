@@ -1,6 +1,7 @@
 class PasswordResetsController < ApplicationController
 
   def new
+    render layout: false #application.html.erbを適用したくない
   end
 
   def create
@@ -12,7 +13,7 @@ class PasswordResetsController < ApplicationController
       redirect_to root_url
     else
       flash.now[:danger] = "Email address not found"
-      render 'new'
+      render 'new',layout: false #application.html.erbを適用したくない
     end
   end
 
