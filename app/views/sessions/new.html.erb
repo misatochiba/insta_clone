@@ -19,8 +19,11 @@
           <%= form_for(:session, url: login_path) do |f| %>
             <%= f.label :email , class: 'label-right'%>
             <%= f.email_field :email, class: 'form-control' %>
+            
             <%= f.label :password , class: 'label-right'%>
+            <%= link_to "パスワードを忘れた場合", new_password_reset_path , class: 'label-right'%>
             <%= f.password_field :password, class: 'form-control' , class: 'label-right'%>
+            
             <%= f.submit "Log in", class: "btn btn-primary" , class: 'label-right'%>
           <% end %>
           <p , class='label-right'>アカウントをお持ちでないですか？<%= link_to "登録する", new_user_path %></p>
