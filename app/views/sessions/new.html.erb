@@ -9,24 +9,25 @@
     <%= render 'layouts/shim' %>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id= "loginpage">
+      <img src="<%= asset_path "landing.png" %>", class='loginleft' />
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3 login">
           <p class='label-right'>Log in</p>
           <%= form_for(:session, url: login_path) do |f| %>
-            <%= f.label :email , class: 'label-right'%>
+            <%= f.label :email , class: '.label-left'%>
             <%= f.email_field :email, class: 'form-control' %>
             
-            <%= f.label :password , class: 'label-right'%>
-            <%= link_to "パスワードを忘れた場合", new_password_reset_path , class: 'label-right'%>
-            <%= f.password_field :password, class: 'form-control' , class: 'label-right'%>
+            <%= f.label :password , class: '.label-left'%>
+            <%= link_to "パスワードを忘れた場合", new_password_reset_path , class: '.label-left'%>
+            <%= f.password_field :password, class: 'form-control' , class: '.label-left'%>
             
-            <%= f.submit "Log in", class: "btn btn-primary" , class: 'label-right'%>
+            <%= f.submit "ログイン", class: "btn btn-primary" , class: '.label-left'%>
           <% end %>
-          <p , class='label-right'>アカウントをお持ちでないですか？<%= link_to "登録する", new_user_path %></p>
+          <p , class='.label-left'>アカウントをお持ちでないですか？<%= link_to "登録する", new_user_path %></p>
         </div>
       </div>
       <footer class="footer">
