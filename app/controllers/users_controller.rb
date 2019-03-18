@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
   def index
-    @users = User.where(activated: FILL_IN).paginate(page: params[:page])
+    @users = User.paginate(page: params[:page])
   end
 
   def show
@@ -21,9 +21,8 @@ class UsersController < ApplicationController
       UserMailer.account_activation(@user).deliver_now
       flash[:info] = "アカウント認証メールを送信しました。メールからログインしてください"
       redirect_to root_url  
-    else
-      flash[:info] = "アカウント認証メールを送信しました。メールからログインしてください"
-      render 'new'
+    else #エラーメッセージが表示される場合
+      render 'new',layout: false #application.html.erbを適用したくない
     end
   end
   
@@ -50,6 +49,6 @@ class UsersController < ApplicationController
     # 正しいユーザーかどうか確認
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(home_url) unless @user == current_user# 仮　正しいユーザー出ないときはフォローボタンが表示されるようにしたい
+      #redirect_to(home_url) unless @user == current_user# 仮　正しいユーザー出ないときはフォローボタンが表示されるようにしたい
     end
 end
