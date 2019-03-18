@@ -1,7 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <% if logged_in? %>
-    <%= link_to "Instagram",user_path(current_user),id: "logo" %>
+    <%= link_to user_path(current_user), size: "20*20", target: "_blank" do %>
+      <%= image_tag "instaheader.png" , class: 'instaheader'%>
+    <% end %>
     <div>
       <input class=serch placeholder="検索">
     </div>
