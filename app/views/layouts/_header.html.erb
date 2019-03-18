@@ -9,14 +9,14 @@
     </div>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to about_path, size: "20*20", target: "_blank" do %></li>
+            <%= image_tag "people.png" , class: 'instaheaderright'%>
+            <% end %>
         <li><%= link_to help_path, size: "20*20", target: "_blank" do %></li>
             <%= image_tag "info.png" , class: 'instaheaderright'%>
             <% end %>
         <li><%= link_to contact_path, size: "20*20", target: "_blank" do %></li>
             <%= image_tag "heart.png" , class: 'instaheaderright'%>
-            <% end %>
-        <li><%= link_to about_path, size: "20*20", target: "_blank" do %></li>
-            <%= image_tag "people.png" , class: 'instaheaderright'%>
             <% end %>
       </ul>
     </nav>
