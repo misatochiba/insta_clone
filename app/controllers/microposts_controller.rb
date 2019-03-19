@@ -7,7 +7,9 @@ class MicropostsController < ApplicationController
       flash[:success] = "Micropost created!"
       render '/users/show'
     else
-      render '/static_pages/about'
+      @feed_items = []
+      flash[:danger]  = "空欄での投稿は出来ません"
+      redirect_to '/users/show'
     end
   end
 
