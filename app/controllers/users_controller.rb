@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index,:destroy,
                                         :following, :followers]
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.all
   end
 
   def show
