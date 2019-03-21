@@ -1,17 +1,16 @@
 class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
-  before_action :logged_in_user, only: [:index,:destroy,
+  before_action :logged_in_user, only: [:index,:destroy,:show,
                                         :following, :followers]
   def index
     @users = User.paginate(page: params[:page])
   end
 
   def show
-    @user = current_user
-    if logged_in?
-      @micropost  = current_user.microposts.build
-      @feed_items = current_user.feed.paginate(page: params[:page])
-    end
+    @user = User.find(params[:id])
+    @micropost  = current_user.microposts.build
+    @microposts = @user.microposts.paginate(page: params[:page])
+    @feed_items = current_user.feed.paginate(page: params[:page])
   end
 
   def new
@@ -43,18 +42,18 @@ class UsersController < ApplicationController
     end
   end
   
-    def following
+  def following
     @title = "Following"
     @user  = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page])
-    render 'show_follow'
+    redirect_to user_url(@user)
   end
 
   def followers
     @title = "Followers"
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
-    render 'show_follow'
+    redirect_to user_url(@user)
   end
 
   private
