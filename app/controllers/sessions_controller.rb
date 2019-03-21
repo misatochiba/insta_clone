@@ -11,14 +11,8 @@ class SessionsController < ApplicationController
   def create 
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
-      if user.activated? #login可能な場合
         remember user
-        redirect_to '/home'
-      else
-        flash.now[:danger]  = "アカウントが有効ではありません"
-        flash.now[:danger] += "メールのリンクからログインしてください"
-        render  'new',layout: false #application.html.erbを適用したくない
-      end
+        redirect_to '/about'
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new',layout: false #application.html.erbを適用したくない
