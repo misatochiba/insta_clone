@@ -9,7 +9,7 @@ class MicropostsController < ApplicationController
       redirect_to '/users/show'
     else
       @feed_items = []
-      flash[:danger]  = "空欄での投稿は出来ません"
+      flash[:danger]  = "画像を投稿してください"
       redirect_to '/users/show'
     end
   end
