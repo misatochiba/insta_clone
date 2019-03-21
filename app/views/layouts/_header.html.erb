@@ -1,7 +1,7 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <% if logged_in? %>
-    <%= link_to user_path(current_user), size: "20*20", target: "_blank" do %>
+    <%= link_to home_path, size: "20*20", target: "_blank" do %>
       <%= image_tag "instaheader.png" , class: 'instaheader'%>
     <% end %>
     <div>
@@ -12,7 +12,7 @@
         <li><%= link_to about_path, size: "20*20", target: "_blank" do %></li>
             <%= image_tag "people.png" , class: 'instaheaderright'%>
             <% end %>
-        <li><%= link_to home_path, size: "20*20", target: "_blank" do %></li>
+        <li><%= link_to user_path(current_user), size: "20*20", target: "_blank" do %></li>
             <%= image_tag "info.png" , class: 'instaheaderright'%>
             <% end %>
         <li><%= link_to users_path, size: "20*20", target: "_blank" do %></li>

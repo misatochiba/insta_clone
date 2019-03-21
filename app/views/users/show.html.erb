@@ -4,6 +4,8 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+        <%= link_to "プロフィールを編集",edit_user_path(current_user) , class: 'profileletter'%>
+        <%= link_to "ログアウト", logout_path, method: :delete , class: 'profileletter'%>
         <%= render 'follow_form' if logged_in? %>
       </h1>
     </section>
