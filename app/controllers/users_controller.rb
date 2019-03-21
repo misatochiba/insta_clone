@@ -22,8 +22,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       UserMailer.account_activation(@user).deliver_now
-      flash[:info] = "アカウント認証メールを送信しました。メールからログインしてください"
-      redirect_to root_url  
+      flash[:info] = "アカウント認証しました。"
+      redirect_to about_url  
     else #エラーメッセージが表示される場合
       render 'new',layout: false #application.html.erbを適用したくない
     end
