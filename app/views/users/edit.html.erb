@@ -2,27 +2,26 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3 editbox">
+    <%= gravatar_for @user %>
+    <a href="http://gravatar.com/emails" target="_blank">change</a>
+  </div>
+  <div class="col-md-6 col-md-offset-3 editbox">
     <%= form_for(@user) do |f| %>
        <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :名前 %>
+      <%= f.label :名前 , class: 'letter'%>
       <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :メールアドレス %>
+      <%= f.label :メールアドレス , class: 'letter'%>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
+      <%= f.label :password , class: 'letter'%>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, class: 'letter'%>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
-
-    <div class="gravatar_edit">
-      <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails" target="_blank">change</a>
-    </div>
   </div>
 </div>
