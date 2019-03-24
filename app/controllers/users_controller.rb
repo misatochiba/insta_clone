@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.account_activation(@user).deliver_now
       flash[:info] = "アカウント登録しました。ログインして下さい"
-      redirect_to login_path  
+      redirect_to root_url  
     else #エラーメッセージが表示される場合
       render 'new',layout: false #application.html.erbを適用したくない
     end
