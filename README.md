@@ -1,24 +1,19 @@
-# README
+insta_clone working repository
+完成出来ませんでしたがレビューお願いします。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+自分が苦労した点
 
-Things you may want to cover:
+テストコードの理解が不足していてテストが十分に書けなかった
+仕様書通りに修正したかった点も修正することでエラーが出てしまい理想通りの動きに作れなかった
+途中からデプロイがうまくいかなくなり結局デプロイ出来ないまま提出することになってしまった
 
-* Ruby version
+学んだ点
 
-* System dependencies
+tutorialを参考に進めましたが、表示ページや規制を部分的に修正したことで理解が深まった気がします。
+自身の知識不足を痛感することとなりました。。もっと勉強の必要性を感じました。。
 
-* Configuration
 
-* Database creation
+自慢したい・相談したい点
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+現状特にありません。ただただ悔しいです。
+自己学習不足と感じているのでもっと時間を作って学習時間に当てたいと思います。

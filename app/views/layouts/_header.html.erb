@@ -1,0 +1,25 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <% if logged_in? %>
+    <%= link_to home_path, size: "40*40" do %>
+      <%= image_tag "instaheader.png" , class: 'instaheader'%>
+    <% end %>
+    <div>
+      <input class=serch placeholder="検索">
+    </div>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to help_path, size: "20*20" do %>
+            <%= image_tag "info.png" , class: 'instaheaderright'%>
+            <% end %></li>
+        <li><%= link_to users_path, size: "20*20" do %>
+            <%= image_tag "heart.png" , class: 'instaheaderright'%>
+            <% end %></li>
+        <li><%= link_to about_path, size: "20*20" do %>
+            <%= image_tag "people.png" , class: 'instaheaderright'%>
+            <% end %></li>
+      </ul>
+    </nav>
+    <% end %>
+  </div>
+</header>

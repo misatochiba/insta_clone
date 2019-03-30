@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                               'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application',
+                               'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
+  </head>
+  <body>
+    <div class="container" id= "loginpage">
+      <p></p>
+      <img src="<%= asset_path "landing.png" %>", class='loginleft' />
+      <% flash.each do |message_type, message| %>
+        <div class="alertchange alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 login">
+          <div class="box">
+          <p class=layouts></p>
+          <%= image_tag "instalogo.png" , class: '.label-left'%>
+          <%= form_for(:session, url: login_path) do |f| %>
+            <% f.label :email , class: '.label-left'%>
+            <%= f.label :email , class: '.label-left'%>
+            <%= f.email_field :email, class: 'form-control loginboxwidth' %>
+            
+            <%= f.label :password , class: '.label-left'%>
+            <%= f.password_field :password, class: 'form-control' , class: '.label-left'%>
+            
+            <%= f.submit "ログイン", class: "btn btn-primary" , class: '.label-left'%>
+            
+            <%= link_to "パスワード忘れた場合", new_password_reset_path %>
+            
+            <%= f.label :アカウントをお持ちでないですか？, class: '.label-left'%>
+            <%= link_to "登録する", new_user_path %>
+          <% end %>
+          <p class=layouts></p>
+          <p class=layouts></p>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <small>
+          <a>© 2019 INSTAGRAM CLONE BY M.CHIBA</a>
+        </small>
+      </footer>
+    <%= debug(params) if Rails.env.development? %>
+    </div>
+  </body>
+</html>
