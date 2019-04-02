@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  before_action :current_user
+
   def home
     @user = current_user
     @micropost  = current_user.microposts.build
